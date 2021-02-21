@@ -1,4 +1,4 @@
-FROM luciferhunmain/lucif3rhunbot:latest
+FROM lucif3rhun/lucif3rhunbot:latest
 
 #clonning repo 
 RUN git clone https://github.com/luciferhunmain/lucif3rhunbot /root/userbot

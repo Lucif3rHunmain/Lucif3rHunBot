@@ -227,7 +227,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         my_last = me.last_name
         my_fullname = f"{my_first} {my_last}" if my_last else my_first
         my_username = f"@{me.username}" if me.username else my_mention
-        totalwarns = Config.MAX_FLOOD_IN_P_M_s + 1
+        totalwarns = Config.MAX_FLOOD_IN_P_M_s
         warns = PM_WARNS[chat_id] + 1
         if PMMENU:
             if Config.CUSTOM_PMPERMIT_TEXT:
@@ -246,17 +246,13 @@ if Config.PRIVATE_GROUP_ID is not None:
                         my_mention=my_mention,
                         totalwarns=totalwarns,
                         warns=warns,
-                    )
-                    + "\n\n"
-                    + "**Send** `/start` ** so that my master can decide why you're here.**"
+                        )
                 )
             else:
 
                 USER_BOT_NO_WARN = (
                     f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`\
-                                    \n\n**Send** `/start` **so that my master can decide why you're here.**"
+                    "Just say the reason and wait until you get approved.**"
                 )
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
@@ -272,14 +268,11 @@ if Config.PRIVATE_GROUP_ID is not None:
                     my_fullname=my_fullname,
                     my_username=my_username,
                     my_mention=my_mention,
-                    totalwarns=totalwarns,
-                    warns=warns,
                 )
             else:
                 USER_BOT_NO_WARN = (
                     f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`"
+                    "Just say the reason and wait until you get approved.`"
                 )
         if PMPERMIT_PIC:
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)

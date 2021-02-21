@@ -1,4 +1,4 @@
-FROM sand1709/catuserbot:latest
+FROM sandy1709/catuserbot:latest
 
 #clonning repo 
 RUN git clone https://github.com/luciferhunmain/lucif3rhunbot /root/userbot

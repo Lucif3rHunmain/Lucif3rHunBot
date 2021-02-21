@@ -14,7 +14,7 @@ from telethon.tl.types import (
     InputStickerSetShortName,
     MessageMediaPhoto
 )
-from userbot.plugins.sql_helper.channel_listdb import in_channels, add_channel, rm_channel, get_all_channels
+from userbot.plugins.sql_helper.ghdb_sql import in_channels, add_channel, rm_channel, get_all_channels
 
 logs_id = Config.PRIVATE_GROUP_ID
 
@@ -144,7 +144,7 @@ async def _(event):
 
 # Written by @HeisenbergTheDanger
 
-@bot.on(admin_cmd(outgoing=True, pattern="addch$"))
+@bot.on(admin_cmd(outgoing=True, pattern="addchannel$"))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -181,7 +181,7 @@ async def add_ch(event):
         await event.delete()
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="rmch$"))
+@bot.on(admin_cmd(outgoing=True, pattern="rmchannel$"))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -233,7 +233,7 @@ async def list(event):
         await event.edit(msg)
 
         
-@bot.on(admin_cmd(outgoing=True, pattern="srch$"))
+@bot.on(admin_cmd(outgoing=True, pattern="search$"))
 async def search(event):
     channel_id =  event.pattern_match.group(1)
     try:

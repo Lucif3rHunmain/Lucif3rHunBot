@@ -44,8 +44,7 @@ for name in files:
 
 LOGS.info("Yay your userbot is officially working.!!!")
 LOGS.info(
-    "Congratulation, now type .alive to see message if bot is live\
-    \nIf you need assistance, head to https://t.me/catuserbot_support"
+    "Congratulation, now type `.alive` to see message if bot is live."
 )
 
 
@@ -54,8 +53,7 @@ async def startupmessage():
         if Config.PRIVATE_GROUP_BOT_API_ID:
             await bot.send_message(
                 Config.PRIVATE_GROUP_BOT_API_ID,
-                "**Congratulation, now type .alive to see message if bot is live\
-        \nIf you need assistance, **head to https://t.me/catuserbot_support",
+                "**Congratulation, now type .alive to see message if bot is live.**",
                 link_preview=False,
             )
     except Exception as e:
